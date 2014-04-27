@@ -6,9 +6,17 @@ app = Flask(__name__)
 def pick():
   return render_template('pick.html')
   
-@app.route('/about')
-def about():
-  return render_template('about.html')
+@app.route('/pvp')
+def pvp():
+  return render_template('board.html')
+
+@app.route('/aio')
+def aio():
+  return render_template('board.html')
+
+@app.route('/aix')
+def aix():
+  return render_template('board.html')  
   
 if __name__ == '__main__':
   app.run(debug=True)

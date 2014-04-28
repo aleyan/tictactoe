@@ -44,11 +44,12 @@ class Board(object):
             0   : Draw
             None: Contested
             """
-        if set(win).issubset(self.xs):
+        if win.issubset(self.xs):
             return 1
-        elif set(win).issubset(self.os):
+        elif win.issubset(self.os):
             return -1
-        elif set(win).issubset(self.os.union(self.xs)):
+        elif len(win.intersection(self.os)) >= 1 \
+            and len(win.intersection(self.xs)) >= 1:
             return 0
         else:
             return None
@@ -60,7 +61,23 @@ class Board(object):
         out = [None]*(len(self.xs)+len(self.os))
         out[::2] = sorted(self.xs)
         out[1::2] = sorted(self.os)
-        return out 
+        return out
+
+    def display(self):
+        current = "".join([str(n) for n in self.moves_made()])
+        table = list()
+        for row in xrange(3):
+            tr = list()
+            for col in xrange(1,4):
+                if (row*3+col) in self.xs:
+                    tr.append( {'player': 'X', 'url':None} )
+                elif (row*3+col) in self.os:
+                    tr.append( {'player': 'O', 'url':None} )
+                else:
+                    tr.append( {'player': None, 'url':current+str(row*3+col)} )
+            table.append(tr)
+        return table
+
     
     def __eq__(self, other):
         return self.xs==other.xs and self.os==other.os

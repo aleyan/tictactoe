@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tic Tac Toe</title>    
+    <title>Tic Tac Toe</title> 
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> 
+    <style>
+      .square {float:left;width:25%;height:115px;width:115px;padding:10px;font-size:70px;text-align:center;border:1px solid #fff;background-color:#ddd}
+      .square:hover{color:#fff;background-color:#337}
+    </style> 
   </head>
   <body>
-   
-    <header>
-    </header> 
     
-    <div class="container">
+    <div>
       {% block content %}
       {% endblock %}
     </div>

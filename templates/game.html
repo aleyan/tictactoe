@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div class="container">
-      {% block board %}
-      {% endblock %}
-    </div>
+  <div class="container center-block">{{message}}</div>
+  {% block board %}
+  {% endblock %}
+  <a href='/'><button type="button" class="btn btn-default">New Game</button></a>
 {% endblock %}

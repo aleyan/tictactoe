@@ -1,5 +1,3 @@
-import board
-
 def memoize(f):
     class memodict(dict):
         def __missing__(self, key):
@@ -38,7 +36,6 @@ def evaluate(board):
     
     for move in moves:
         outcome = evaluate(board.make_move(move))
-        outcomes.append((move,outcome))
         if is_better( best_outcome, outcome, turn):
             best_outcome = outcome
             best_move = move

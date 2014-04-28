@@ -1,6 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
-  <a href='/pvp'>PvP</a>
-  <a href='/aio'>PvAI</a>
-  <a href='/aix'>AIvP</a>
+<div class="btn-group">
+  <a href='/pvp/'><button type="button" class="btn btn-default">Player vs Player</button></a>
+  <a href='/ai/x'><button type="button" class="btn btn-default">Player(X) vs Computer(O)</button></a>
+  <a href='/ai/o'><button type="button" class="btn btn-default">Computer(O) vs Player(X)</button></a>
+</div>
 {% endblock %}
